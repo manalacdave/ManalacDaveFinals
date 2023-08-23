@@ -1,0 +1,28 @@
+﻿@page
+@model ECommerce.Web.Pages.Manage.Entity.Delete
+@{
+}
+
+<form method="POST">
+    <div class="form-group">
+        @Html.ValidationSummary()
+    </div>
+    <div class="form-group">
+        <label asp-for="Data.Entity!">Make</label>
+        <input type="text" class="form-control" id="make" aria-describedby="entityMakeHelp" placeholder="Enter make" asp-for="Data.Entity!" disabled>
+        <small id="entityMakeHelp" class="form-text text-muted">Make of the entity is required.</small>
+    </div>
+    <div class="form-group">
+        <label asp-for="Data.Entity!">Manufacturer</label>
+        <input type="text" class="form-control" id="manufacturer" aria-describedby="entityManufacturerHelp" placeholder="Enter manufacturer" asp-for="Data.Entity!" disabled>
+        <small id="entityManufacturerHelp" class="form-text text-muted">Manufacturer of the entity is required.</small>
+    </div>
+    <div class="form-group">
+        <label asp-for="Data.Entity!">Year</label>
+        <input type="text" class="form-control" id="year" aria-describedby="entityYearHelp" placeholder="Enter year" asp-for="Data.Entity!" disabled>
+        <small id="entityYearHelp" class="form-text text-muted">Year of the entity is required.</small>
+    </div>
+    <input type="hidden" asp-for="Data.Entity!" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="~/manage/entity" class="btn btn-secondary">Back</a>
+</form>

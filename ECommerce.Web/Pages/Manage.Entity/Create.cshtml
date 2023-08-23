@@ -1,0 +1,24 @@
+﻿@page
+@model ECommerce.Web.Pages.Manage.Entity.Create
+@{
+}
+
+<form method="POST">
+    <div class="form-group">
+        @Html.ValidationSummary()
+    </div>
+    <div class="form-group">
+        <label asp-for="Data.Entity!">Make</label>
+        <input type="text" class="form-control" id="make" aria-describedby="entityMakeHelp" placeholder="Enter make" asp-for="Data.Entity!">
+    </div>
+    <div class="form-group">
+        <label asp-for="Data.Entity!">Manufacturer</label>
+        <input type="text" class="form-control" id="manufacturer" aria-describedby="entityManufacturerHelp" placeholder="Enter manufacturer" asp-for="Data.Entity!">
+    </div>
+    <div class="form-group">
+        <label asp-for="Data.Entity!">Year</label>
+        <input type="text" class="form-control" id="year" aria-describedby="entityYearHelp" placeholder="Enter year" asp-for="Data.Entity!">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="~/manage/entity" class="btn btn-secondary">Back</a>
+</form>
