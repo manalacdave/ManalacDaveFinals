@@ -1,5 +1,5 @@
 ﻿using ECommerce.Contracts.Common;
-using ECommerce.Contracts.Categories;
+using ECommerce.Contracts.Columns;
 using System;
 using System.Collections.Generic;
 using System.Linq;

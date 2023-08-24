@@ -1,5 +1,5 @@
 using ECommerce.Contracts.Common;
-using ECommerce.Contracts.Categories;
+using ECommerce.Contracts.Columns;
 using ECommerce.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

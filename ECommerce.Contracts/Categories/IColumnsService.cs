@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerce.Contracts.Categories
+namespace ECommerce.Contracts.Columns
 {
-    public interface ICategoriesService : IService
+    public interface IColumnsService : IService
     {
-        List<ArticlesDto> GetAll();
+        List<ColumnsDto> GetAll();
     }
 }

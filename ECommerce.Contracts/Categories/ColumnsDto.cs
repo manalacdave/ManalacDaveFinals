@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerce.Contracts.Categories
+namespace ECommerce.Contracts.Columns
 {
-    public class CategoriesDto
+    public class ColumnsDto
     {
         public string? Name { get; set; }
         public string? Description { get; set; }
