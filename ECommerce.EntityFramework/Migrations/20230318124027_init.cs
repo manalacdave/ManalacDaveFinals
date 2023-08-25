@@ -10,6 +10,10 @@ namespace ECommerce.EntityFramework.Migrations
     public partial class init : Migration
 #pragma warning restore CS8981 // The type name only contains lower-cased ascii characters. Such names may become reserved for the language.
     {
+        public init()
+        {
+        }
+
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {

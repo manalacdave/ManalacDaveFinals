@@ -1,22 +1,29 @@
-﻿@page
-@model Index
-@{
-    ViewData["Title"] = "Home page";
-}
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Diagnostics;
 
-<div class="text-center">
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+namespace ECommerce.Web.Pages
+{
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    [IgnoreAntiforgeryToken]
+    public class ErrorModel : PageModel
+    {
+        public string? RequestId { get; set; }
 
-<div>
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
-    <ul>
-        @{
-            foreach (var columns in Model.Columns)
-            {
-                <li>@columns.Name   - @columns.Description   - @columns.Abbreviation</li>
-            }
+        private readonly ILogger<ErrorModel>
+    _logger;
+
+    public ErrorModel(ILogger<ErrorModel>
+        logger)
+        {
+        _logger = logger;
         }
-    </ul>
 
-</div>
+        public void OnGet()
+        {
+        RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+        }
+        }
+        }

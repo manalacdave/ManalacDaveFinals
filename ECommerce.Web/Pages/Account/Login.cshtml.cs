@@ -43,6 +43,10 @@ namespace ECommerce.Web.Pages.Account
                 ExpiresUtc = DateTime.Now.AddMinutes(30)
             });
         }
+        public class ViewModel
+        {
+            public string? Login { get; set; }
+        }
 
     }
 }

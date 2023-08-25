@@ -13,24 +13,26 @@ namespace DaveManalac.Finals_.Pages
     public class Index : PageModel
     {
         private readonly ILogger<Index> _logger;
-        private readonly IArticlesService _columnsService;
+        private readonly IArticlesService _articlesService;
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-        public Index(ILogger<Index> logger, IArticlesService columnsService)
+        public Index(ILogger<Index> logger, IArticlesService articlesService)
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             _logger = logger;
-            _columnsService = columnsService;
+            _articlesService = articlesService;
         }
 
         public void OnGet()
         {
-            this.Columns = _columnsService.GetAll();
+            this.Columns = _articlesService.GetAll();
         }
 
         public List<ArticlesDto> Columns { get; set; }
         public class ViewModel
         {
             public ArticlesDto? Columns { get; set; }
+            public string? Login { get; set; }
+            public Index? Index { get; set; }
         }
 
     }
