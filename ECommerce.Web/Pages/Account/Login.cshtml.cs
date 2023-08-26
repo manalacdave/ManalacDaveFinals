@@ -15,16 +15,17 @@ namespace ECommerce.Web.Pages.Account
     public class Login : PageModel
     {
     private readonly ILogger<Login> _logger;
-        private readonly IArticlesService _columnsService;
+        private readonly IColumnsService _columnsService;
 
         [BindProperty]
         public string? EmailAddress { get; set; }
+        [BindProperty]
         public string? Password { get; set; }
 
-        public Login(ILogger<Login> logger, IArticlesService columnsService)
+        public Login(ILogger<Login> logger, IColumnsService columnsService)
         {
             _logger = logger;
-            _columnsService = columnsService;
+            _columnsService = (IColumnsService)columnsService;
         }
 
         public async Task SignIn(string? columnsName, Guid? columnsId)
